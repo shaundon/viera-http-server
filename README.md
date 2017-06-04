@@ -1,6 +1,6 @@
 # Viera HTTP server
 
-Very lightweight HTTP server to wrap [https://www.npmjs.com/package/viera-api](viera-api).
+Very lightweight HTTP server to wrap [viera-api](https://www.npmjs.com/package/viera-api).
 
 # Set up
 
