@@ -5,7 +5,8 @@ Very lightweight HTTP server to wrap [viera-api](https://www.npmjs.com/package/v
 ## Set up
 
 Make a copy of `config.example.json` named `config.json` and put
-the IP address of your TV in there.
+the IP address of your TV in there, plus an API key to use for
+authentication.
 
 Run `npm install` to install dependencies.
 
@@ -16,8 +17,8 @@ Run `npm start` to start the server.
 Some samples with curl:
 
 ```
-curl http://localhost:5000?command=power
-curl http://localhost:5000?command=netflix
+curl -H "Authorization:yourapikey" http://localhost:5000?command=power
+curl -H "Authorization:yourapikey" http://localhost:5000?command=netflix
 ```
 
 ..you get the idea.

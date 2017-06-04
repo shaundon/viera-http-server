@@ -1,11 +1,25 @@
 const Viera = require('viera-api');
 const express = require('express');
+const authentication = require('express-authentication');
 
-const {ip} = require('./config.json');
+const {ip, apiKey} = require('./config.json');
 
 const app = express();
 
-app.get('/', (req, res) => {
+app.use((req, res, next) => {
+  // Get auth data.
+  req.challenge = req.get('Authorization');
+  req.authenticated = req.challenge === apiKey;
+  if (req.authenticated) {
+      req.authentication = { user: 'Hello' };
+  } else {
+      req.authentication = 'INVALID_API_KEY';
+  }
+  next();
+});
+
+app.get('/', authentication.required(), (req, res) => {
+
   const command = req.query.command || '';
   if (!command) {
     res.status(400).send(`Provide a command query parameter.`);

@@ -1,3 +1,4 @@
 {
-  "ip": "IP address of TV here"
+  "ip": "IP address of TV here",
+  "apiKey": "Put an API key here of your choosing"
 }
