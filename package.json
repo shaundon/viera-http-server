@@ -14,6 +14,6 @@
     "express": "^4.15.3",
     "express-authentication": "^0.3.2",
     "forever": "^0.15.3",
-    "viera-api": "^1.0.0"
+    "viera-api": "^1.1.0"
   }
 }
